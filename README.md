@@ -1,6 +1,6 @@
 # Sel
 
-Dom selector
+DOM selector
 
 ## Example
 
