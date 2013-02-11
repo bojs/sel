@@ -1,8 +1,8 @@
 {
   "name": "sel",
-  "repo": "corejs/sel",
+  "repo": "bojs/sel",
   "description": "dom selector",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "dependencies": {},
   "scripts": ["index.js"],
   "keywords": ["dom", "selector"],

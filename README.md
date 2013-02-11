@@ -4,4 +4,4 @@ DOM selector
 
 ## Install
 
-    $ component install corejs/sel
+    $ component install bojs/sel
