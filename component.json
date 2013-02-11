@@ -5,6 +5,6 @@
   "version": "0.1.0",
   "dependencies": {},
   "scripts": ["index.js"],
-  "keywords": ["dom", "selector", "jquery", "sizzle", "zepto"],
+  "keywords": ["dom", "selector"],
   "license": "MIT"
 }
