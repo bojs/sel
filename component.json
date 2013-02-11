@@ -2,7 +2,7 @@
   "name": "sel",
   "repo": "corejs/sel",
   "description": "dom selector",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "dependencies": {},
   "scripts": ["index.js"],
   "keywords": ["dom", "selector"],

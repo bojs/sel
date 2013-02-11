@@ -1,7 +1,7 @@
 module.exports = sel;
 
 var sel = function (selector) {
-  return toArray(select(parse(selector));
+  return select(parse(selector);
 };
 
 var parse = function (selector) {
@@ -39,8 +39,4 @@ var select = function (selector) {
   }
 
   return selection;
-};
-
-var toArray = function (obj) {
-  return obj.length ? Array.prototype.slice.call(obj) : [].concat(obj);
 };
