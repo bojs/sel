@@ -11,7 +11,7 @@ var Sel = function (selector) {
   this.nodes = toArray(select(parse(selector)));
 };
 
-var sel.plugin = function () {
+sel.plugin = function () {
   var self = this;
   toArray(arguments).forEach(function (plugin) {
     dictionary(plugin).each(function (fn, name) {
