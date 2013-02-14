@@ -1,7 +1,33 @@
+var extend = require('extend'),
+    dictionary = require('dictionary');
+
 module.exports = sel;
 
 var sel = function (selector) {
-  return select(parse(selector);
+  return new Sel(selector);
+};
+
+var Sel = function (selector) {
+  this.nodes = toArray(select(parse(selector)));
+};
+
+var sel.plugin = function () {
+  var self = this;
+  toArray(arguments).forEach(function (plugin) {
+    dictionary(plugin).each(function (fn, name) {
+      self[name] = function (args) {
+        self.nodes.forEach(function (node, index, nodes) {
+          fn(extend(args, [{
+            node: node,
+            index: index,
+            nodes: nodes,
+            sel: sel
+          }]));
+        });
+        return self;
+      };
+    });
+  });
 };
 
 var parse = function (selector) {
@@ -39,4 +65,8 @@ var select = function (selector) {
   }
 
   return selection;
+};
+
+var toArray = function (obj) {
+  return obj.length ? Array.prototype.slice.call(obj) : [].concat(obj);
 };
