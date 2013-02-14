@@ -2,7 +2,7 @@
   "name": "sel",
   "repo": "bojs/sel",
   "description": "dom selector",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "dependencies": {
     "corejs/dictionary": "*",
     "corejs/extend": "*"

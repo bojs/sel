@@ -1,9 +1,7 @@
 var extend = require('extend'),
     dictionary = require('dictionary');
 
-module.exports = sel;
-
-var sel = function (selector) {
+var sel = module.exports = function (selector) {
   return new Sel(selector);
 };
 
