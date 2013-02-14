@@ -28,6 +28,7 @@ var sel.plugin = function () {
       };
     });
   });
+  return self;
 };
 
 var parse = function (selector) {
