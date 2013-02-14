@@ -2,8 +2,11 @@
   "name": "sel",
   "repo": "bojs/sel",
   "description": "dom selector",
-  "version": "0.5.0",
-  "dependencies": {},
+  "version": "0.5.1",
+  "dependencies": {
+    "corejs/dictionary": "*",
+    "corejs/extend": "*"
+  },
   "scripts": ["index.js"],
   "keywords": ["dom", "selector"],
   "license": "MIT"
