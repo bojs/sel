@@ -14,11 +14,8 @@ sel.plugin = function () {
   toArray(arguments).forEach(function (plugin) {
     dictionary(plugin).each(function (fn, name) {
       Sel.prototype[name] = function (args) {
-        this.nodes.forEach(function (node, index, nodes) {
-          fn(extend(args, [{
-            node: node,
-            sel: sel
-          }]));
+        this.nodes.forEach(function (node) {
+          fn(extend(args, [{ node: node, sel: sel }]));
         });
         return this;
       };
