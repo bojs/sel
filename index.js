@@ -16,7 +16,7 @@ sel.plugin = function () {
     dictionary(plugin).each(function (fn, name) {
       Sel.prototype[name] = function (args) {
         this.nodes.forEach(function (node) {
-          fn(extend(args, [{ node: node, sel: sel }]));
+          fn(extend(args, { node: node, sel: sel }));
         });
         return this;
       };
