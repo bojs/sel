@@ -17,8 +17,6 @@ sel.plugin = function () {
         this.nodes.forEach(function (node, index, nodes) {
           fn(extend(args, [{
             node: node,
-            index: index,
-            nodes: nodes,
             sel: sel
           }]));
         });
