@@ -29,7 +29,7 @@ var parse = function (selector) {
   var type, 
       val;
   
-  if (/^[#][\w]+$]/.test(selector)) {
+  if (/^[#][\w]+$/.test(selector)) {
     type = 'id';
     val = selector.slice(1);
   } else if (/^[.][\w]+$/.test(selector)) {
