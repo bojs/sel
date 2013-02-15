@@ -1,4 +1,5 @@
-var extend = require('extend'),
+var arrayize = require('arrayize'),
+    extend = require('extend'),
     dictionary = require('dictionary');
 
 var sel = module.exports = function (selector) {
@@ -6,12 +7,12 @@ var sel = module.exports = function (selector) {
 };
 
 var Sel = function (selector) {
-  this.nodes = toArray(select(parse(selector)));
+  this.nodes = arrayize(select(parse(selector)));
 };
 
 sel.plugin = function () {
   var self = this;
-  toArray(arguments).forEach(function (plugin) {
+  arrayize(arguments).forEach(function (plugin) {
     dictionary(plugin).each(function (fn, name) {
       Sel.prototype[name] = function (args) {
         this.nodes.forEach(function (node) {
@@ -59,11 +60,4 @@ var select = function (selector) {
   }
 
   return selection;
-};
-
-var toArray = function (obj) {
-  if (typeof obj === 'undefined') {
-    return [];
-  }
-  return obj.length ? Array.prototype.slice.call(obj) : [].concat(obj);
 };
