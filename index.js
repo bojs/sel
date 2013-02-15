@@ -13,8 +13,8 @@ sel.plugin = function () {
   var self = this;
   toArray(arguments).forEach(function (plugin) {
     dictionary(plugin).each(function (fn, name) {
-      self[name] = function (args) {
-        self.nodes.forEach(function (node, index, nodes) {
+      Sel.prototype[name] = function (args) {
+        this.nodes.forEach(function (node, index, nodes) {
           fn(extend(args, [{
             node: node,
             index: index,
@@ -22,11 +22,11 @@ sel.plugin = function () {
             sel: sel
           }]));
         });
-        return self;
+        return this;
       };
     });
   });
-  return self;
+  return this;
 };
 
 var parse = function (selector) {
