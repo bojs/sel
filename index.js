@@ -10,6 +10,14 @@ var Sel = function (selector) {
   this.nodes = arrayize(select(parse(selector)));
 };
 
+Sel.prototype.first = function () {
+  return this.nodes[0];
+};
+
+Sel.prototype.last = function () {
+  return this.nodes[this.nodes.length - 1];
+};
+
 sel.plugin = function () {
   arrayize(arguments).forEach(function (plugin) {
     dictionary(plugin).each(function (fn, name) {
